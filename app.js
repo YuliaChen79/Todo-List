@@ -1,6 +1,7 @@
 // 載入 express 並建構應用程式伺服器
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser') // 引用 body-parser
 const methodOverride = require('method-override')
@@ -19,6 +20,6 @@ app.use(methodOverride('_method'))
 app.use(routes)
 
 // 設定 port 3000
-app.listen(3000, () => {
-  console.log('App is running on http://localhost:3000')
+app.listen(PORT, () => {
+  console.log(`App is running on http://localhost:${PORT}`)
 })
